@@ -17,3 +17,21 @@ for (var rectCounter = 1; rectCounter <= 15; rectCounter++) {
     }
     context.fillRect(positionX * rectCounter, positionY * rectCounter, size, size);
 }
+
+var canvasWidth = canvas.width;
+var canvasHeight = canvas.height;
+
+for (var unitCounter = 0; unitCounter <= canvasWidth; unitCounter++) {
+    if (unitCounter % 3 === 0) {
+        context.beginPath();
+        context.moveTo(unitCounter, canvasHeight / 2);
+        if (unitCounter % 2 === 0) {
+            context.lineTo(canvasWidth / 2, canvasHeight - canvasHeight);
+        } else {
+            context.lineTo(canvasWidth / 2, canvasHeight);
+        }
+        context.strokeStyle = 'rgba(255,0,0,.5)';
+        context.stroke();
+    }
+}
+
